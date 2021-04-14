@@ -16,6 +16,9 @@ body{
     margin-bottom: 15px;
     padding: 5px;
 }
+.top_header .active{
+    background-color: rgb(146, 241, 146);
+}
 .top_header .header_links{
     margin-top: 15px;
     text-align: right;
@@ -24,11 +27,13 @@ body{
     width: 80px;
     height: 80px;
 }
+.top_header .header_links ul li{
+    margin-right: 15px;
+}
 .top_header .header_links a{
     text-decoration: none;
     color: rgb(44, 44, 44);
-    padding: 5px;
-    margin-right: 15px;
+    padding: 8px 10px;
     font-size: 18px;
 }
 
@@ -1182,49 +1187,41 @@ footer.main_footer{
 
 .dashboard .dash-holder .custom-col{
     padding-left: 0px;
+    background-image: url('../img/side-nav-bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100vh;
 }
 .dashboard .dash-holder .side-navbar-cont{
     width: 16.6666%;
     height: 100vh;
-    background-color: rgba(29, 32, 49, 0.781);
+    background-color: rgba(29, 32, 49, 0.881);
     position: fixed;
     text-align: right;
 }
 .dashboard .dash-holder .side-navbar-cont .side-navbar-list{
     padding-top: 60px;
-    padding-right: 8px;
+    padding-right: 20px;
     width: 100%;
 }
-.dashboard .dash-holder .side-navbar-cont .side-navbar-list ul li{
-    margin-bottom: 25px;
+.dashboard .dash-holder .side-navbar-cont .side-navbar-list .elect_device_collapse > a{
+    color: rgba(66, 192, 62, 0.988);
 }
-.dashboard .dash-holder .side-navbar-cont .side-navbar-list ul li i{
+.dashboard .dash-holder .side-navbar-cont .side-navbar-list .elect_device_collapse i{
     margin-left: 10px;
-    font-size: 15px;
-    color: rgba(240, 243, 245, 0.788);
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.899);
 }
-.dashboard .dash-holder .side-navbar-cont .side-navbar-list .list-item a{
-    color: rgba(67, 212, 62, 0.788);
-    text-decoration: none;
+.dashboard .dash-holder .side-navbar-cont .side-navbar-list .elect_device_collapse .sub_list{
+    background-color: rgba(255, 255, 255, 0.37);
+    padding: 8px 15px;
 }
-.dashboard .dash-holder .side-navbar-cont .side-navbar-list .list-item{
-    transition: all .3s ease-in-out;
-    padding: 8px;
+.dashboard .dash-holder .side-navbar-cont .side-navbar-list .elect_device_collapse .sub_list a{
+    color: rgba(113, 231, 109, 0.76);
+    margin-bottom: 10px;
 }
-.dashboard .dash-holder .side-navbar-cont .side-navbar-list .list-item:hover{
-    background-color: rgba(67, 212, 62, 0.788);
-    width: 100%;
-    color: #fff !important;
-}
-.dashboard .dash-holder .side-navbar-cont .side-navbar-list .list-item:hover a{
-    color: #fff;
-    text-decoration: underline;
-}
-.dashboard .dash-holder .side-navbar-cont .elect_sub_list{
-    padding: 20px 30px 0 0;
-    width: 100%;
-    text-align: right;
-}
+
 .dashboard .dash-holder .side-navbar-cont .close-nav{
     color: #fff;
     font-weight: bold;
@@ -1245,28 +1242,62 @@ footer.main_footer{
     font-size: 25px;
     display: none;
 }
-.dashboard .dash-holder .elect_device_container{
+.dashboard .dash-holder .main_tabs{
     direction: rtl;
     text-align: right;
     padding: 35px 20px;
 }
-.dashboard .dash-holder .elect_device_container #prod_desc{
-    width: 100%;
-    height: 100px;
-    font-size: 20px;
-    resize: none;
+.dashboard .dash-holder .main_tabs .cate_table_cont{
+    margin-top: 25px;
 }
-.dashboard .dash-holder .elect_device_container label{
-    color: rgba(37, 133, 34, 0.988);
-    font-weight: 600;
-}
-.dashboard .dash-holder .elect_device_container input,.dashboard .dash-holder .elect_device_container textarea{
-    margin-bottom: 25px;
-}
-.dashboard .dash-holder .elect_device_container .pic_preview img{
+.dashboard .dash-holder .main_tabs .cate_table_cont table tr td img{
     width: 100px;
     height: 100px;
 }
+table.dataTable td{
+    vertical-align: middle;
+    font-size: 16px;
+    font-weight: bold;
+}
+table.dataTable thead .sorting:after{
+    font-family: "Font Awesome 5 Free";
+    content: "\f884" !important;
+}
+table.dataTable thead .sorting_asc:after{
+    font-family: "Font Awesome 5 Free";
+    content: "\f884" !important;
+}
+table.dataTable thead .sorting_desc:after{
+    font-family: "Font Awesome 5 Free";
+    content: "\f161" !important;
+
+}
+.dashboard .dash-holder .main_tabs .modal-footer button{
+    border: none !important;
+    margin: auto;
+}
+.dashboard .dash-holder .main_tabs .modal-body .pic_preview{
+    margin-top: 25px;
+    padding: 10px;
+}
+.dashboard .dash-holder .main_tabs .modal-body .pic_preview img{
+    width: 100px;
+    height: 100px;
+}
+.dashboard .dash-holder .main_tabs .prod_table span.req{
+    color: red;
+}
+.dashboard .dash-holder .main_tabs .prod_table thead{
+    font-size: 13px;
+}
+.dashboard .dash-holder .main_tabs .prod_table tr td{
+    font-size: 12px;
+}
+.dashboard .dash-holder .main_tabs .prod_table tr td img{
+    width: 60px !important;
+    height: 60px !important;
+}
+
 /* dashboard page */
 
 
@@ -1471,22 +1502,16 @@ footer.main_footer{
         font-size: 17px;
     }
     .dashboard .dash-holder .side-navbar-cont .side-navbar-list{
-        padding-right:8px ;
+        padding-right: 7px;
     }
-    .dashboard .dash-holder .side-navbar-cont .side-navbar-list ul li i{
-        font-size: 11px;
+    .dashboard .dash-holder .side-navbar-cont .side-navbar-list .elect_device_collapse > a{
+        font-size: 14px;
     }
-    .dashboard .dash-holder .side-navbar-cont .side-navbar-list .list-item{
-        padding: 2px;
+    .dashboard .dash-holder .side-navbar-cont .side-navbar-list .elect_device_collapse i{
+        margin-left: 8px;
         font-size: 13px;
     }
-    .dashboard .dash-holder .elect_device_container{
-        padding: 20px 15px;
-    }
-    .dashboard .dash-holder .elect_device_container label{
-        font-size: 15px;
-        font-weight: 500;
-    }
+    
 }
 @media (min-width:430px) and (max-width:530px){
     .top_content .top-content-holder .top-content-data p{
@@ -1823,6 +1848,13 @@ footer.main_footer{
     }
     .preview .prod_details .prev_btn{
         justify-content: center;
+    }
+    .dashboard .dash-holder .main_tabs .cate_table_cont table tr td img{
+        width: 70px;
+        height: 70px;
+    }
+    .dashboard .dash-holder table.dataTable thead{
+        font-size: 12px;
     }
       
 }
