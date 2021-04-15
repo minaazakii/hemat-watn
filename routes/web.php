@@ -1,5 +1,9 @@
 <?php
 
+
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,6 +14,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -30,19 +35,19 @@ Route::get('/preview', function () {
 Route::get('/dashboard', 'CpanelController@index')->name('cpanel-index');
 
 /**Category Routes */
-Route::get('/Categories/{type}', 'CategoryController@index')->name('categories');
+Route::get('/Categories/{type}', 'Controllers\CategoryController@index')->name('categories');
 Route::get('AddCategory/{type}', 'CategoryController@AddCategory') -> name('AddCategory');
-Route::post('storeCategory', 'CategoryController@storeCategory') -> name('storeCategory');
+Route::post('storeCategory', 'Controllers\CategoryController@storeCategory') -> name('storeCategory');
 Route::get('editCategory/{offer_id}', 'CategoryController@editCategory')->name('editCategory');
  Route::post('updateCat/{offer_id}', 'CategoryController@updateCategory')->name('updateCategory');
- Route::get('deleteCategory/{offer_id}', 'CategoryController@deleteCategory')->name('deleteCategory');
+ Route::post('deleteCategory/{offer_id}', 'Controllers\CategoryController@deleteCategory')->name('deleteCategory');
 
  /************************************************************************************************************/
 
 /**SubCategory Routes */
 Route::get('/subCategory/{type}', 'SubCategoryController@index')->name('subCats');
 Route::get('AddSubCategory/{type}', 'SubCategoryController@AddCategory') -> name('AddSubCategory');
-Route::post('storeSubCategory', 'SubCategoryController@storeCategory') -> name('storeSubCategory');
+Route::post('storeSubCategory', 'Controllers\SubCategoryController@storeCategory') -> name('storeSubCategory');
 Route::get('editSubCategory/{offer_id}', 'SubCategoryController@editCategory')->name('editSubCategory');
  Route::post('updateSubCat/{offer_id}', 'SubCategoryController@updateCategory')->name('updateSubCat');
  Route::get('deleteSubCategory/{offer_id}', 'SubCategoryController@deleteCategory')->name('deleteSubCategory');

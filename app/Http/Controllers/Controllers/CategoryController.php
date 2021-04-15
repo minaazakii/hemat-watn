@@ -10,7 +10,7 @@ class CategoryController extends Controller
 {
     public function index($type){
         $cat = Category::select()->where('type' , $type) ->get();
-          return view('Cpanel.Category.index' , 
+          return view('Cpanel.Category.index' ,
           [
               'cat' -> $cat
           ]);
@@ -26,9 +26,9 @@ class CategoryController extends Controller
         $request -> img_url -> move($path,$file_name1 );
         // insert
         Category::Create([
-            'name_ar' => $request ->name_ar,
-            'name_en' => $request ->name_en,
-            'type' =>   $request -> type ,
+            'name_ar' => $request ->name,
+            'name_en' => $request ->name,
+            'type' =>   $request -> type,
             'img_url' => $file_name1 ,
         ]);
         return redirect()->route('categories')->withStatus(__('Category successfully Added.'));
@@ -61,11 +61,11 @@ class CategoryController extends Controller
             'type' =>   $request -> type ,
             'img_url' => $file_name1 ,
 
-        ]); 
+        ]);
         return redirect()->route('categories')->withStatus(__('Category successfully Updated.'));
 
     }
-        
+
     public function deleteCategory($CategoryId){
         $category = Category::find($CategoryId);
         if(!$category )
@@ -73,4 +73,5 @@ class CategoryController extends Controller
         $category -> delete();
         return redirect()->route('categories')->withStatus(__('Category successfully Deleted.'));
     }
+
 }

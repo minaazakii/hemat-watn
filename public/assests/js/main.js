@@ -17,6 +17,28 @@ $(document).ready(function(){
 })
 
 
+/*  
+
+edit_prod_btn 
+
+new_product_container 
+
+edit-prod-form
+
+edit_btn
+*/
+
+$('.new_product_container .edit_prod_btn').on('click',function(){
+    $('.new_product_container').fadeOut(200);
+    $('.edit-prod-form').fadeIn(250)
+})
+
+$('.edit-prod-form .edit_btn').on('click',function(){
+    $('.edit-prod-form').fadeOut(200)
+    $('.new_product_container').fadeIn(250);
+})
+
+
 
 
 

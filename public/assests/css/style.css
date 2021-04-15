@@ -1191,7 +1191,8 @@ footer.main_footer{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    height: 100vh;
+    background-attachment: fixed;
+    height: 730px;
 }
 .dashboard .dash-holder .side-navbar-cont{
     width: 16.6666%;
@@ -1297,10 +1298,34 @@ table.dataTable thead .sorting_desc:after{
     width: 60px !important;
     height: 60px !important;
 }
-
+.dashboard .dash-holder .new-product label,.dashboard .dash-holder .edit-prod-form label{
+    font-size: 17px;
+    font-weight: 600;
+    color: rgb(53, 190, 53);
+}
+.dashboard .dash-holder .new-product input, .dashboard .dash-holder .new-product textarea,.dashboard .dash-holder .edit-prod-form input,.dashboard .dash-holder .edit-prod-form textarea{
+    margin-bottom: 15px;
+    color: rgb(39, 128, 39);
+    resize: none;
+}
+.dashboard .dash-holder .new-product .add_new_btn,.dashboard .dash-holder .edit-prod-form .edit_btn{
+    margin-top: 20px;
+    padding: 10px 55px;
+    border-radius: 20px;
+}
+.dashboard .dash-holder .edit-prod-form{
+    display: none;
+}
+.dashboard .dash-holder .offer-inputs{
+    margin-bottom: 15px;
+}
 /* dashboard page */
 
 
+
+table tr td,table th{
+    text-align: center;
+}
 
 
 
@@ -1510,6 +1535,12 @@ table.dataTable thead .sorting_desc:after{
     .dashboard .dash-holder .side-navbar-cont .side-navbar-list .elect_device_collapse i{
         margin-left: 8px;
         font-size: 13px;
+    }
+    .dashboard .dash-holder .new-product label, .dashboard .dash-holder .edit-prod-form label{
+        font-size: 14px;
+    }
+    .dashboard .dash-holder .new-product .add_new_btn,.dashboard .dash-holder .edit-prod-form .edit_btn{
+        padding: 8px 30px;
     }
     
 }

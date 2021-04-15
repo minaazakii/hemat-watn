@@ -9,7 +9,7 @@ use App\Model\SubCategory ;
 class SubCategoryController extends Controller
 {
         public function index($type){
-                $cat = SubCategory::select()-where('type' , $type) ->get();
+                $cat = SubCategory::select()->where('type' , $type) ->get();
           return view('Cpanel.SubCategory.index' , ['cat' -> $cat]);
     }
       public function AddCategory($type){
@@ -23,9 +23,9 @@ class SubCategoryController extends Controller
         $request -> img_url -> move($path,$file_name1 );
         // insert
         SubCategory::Create([
-            'name_ar' => $request ->name_ar,
-            'name_en' => $request ->name_en,
-            'cat_id' =>   $request -> cat_id ,
+            'name_ar' => $request ->name,
+            'name_en' => $request ->name,
+            'cat_id' =>   '2' ,
             'type' => $request -> type ,
             'img_url' => $file_name1 ,
         ]);
@@ -60,12 +60,12 @@ class SubCategoryController extends Controller
             'type' => $request -> type ,
             'img_url' => $file_name1 ,
 
-        ]); 
-      
+        ]);
+
         return redirect()->route('subCats')->withStatus(__('Category successfully Updated.'));
 
     }
-        
+
     public function deleteCategory($CategoryId){
         $category = SubCategory::find($CategoryId);
         if(!$category )

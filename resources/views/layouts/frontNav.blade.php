@@ -13,27 +13,27 @@
                                     <img src="assests/img/logo.png" />
                                 </div>
                             </li>
-                            <li @if($slug == 'home') class="nav-item active" @endif  
+                            <li @if($slug == 'home') class="nav-item active" @endif
                               @if($slug != 'home') class="nav-item " @endif  >
-                                <a  
+                                <a
                                href="{{route('home')}}">الرئيسية <span class="sr-only">(current)</span></a>
                             </li>
-                              <li @if($slug == 'platform') class="nav-item active" @endif  
+                              <li @if($slug == 'platform') class="nav-item active" @endif
                               @if($slug != 'platform') class="nav-item " @endif  >
                                 <a class="nav-link" href="{{route('platform')}}">المنصة</a>
                             </li>
-                      <li @if($slug == 'offer') class="nav-item active" @endif  
+                      {{-- <li @if($slug == 'offer') class="nav-item active" @endif
                               @if($slug != 'offer') class="nav-item " @endif  >
                                 <a class="nav-link" href="{{route('offer')}}">العروض</a>
-                            </li>
-                          <li @if($slug == 'about') class="nav-item active" @endif  
+                            </li> --}}
+                          <li @if($slug == 'about') class="nav-item active" @endif
                               @if($slug != 'about') class="nav-item " @endif  >
                                 <a class="nav-link" href="#">من نحن</a>
                             </li>
                         </ul>
                    </div>
-        
-                </div>  <!-- header links --> 
+
+                </div>  <!-- header links -->
                 <!-- header user -->
                 <div class="col-sm-5 col-7 header_icons_cont">
                     <div class="header_icons d-inline-block">
@@ -46,7 +46,7 @@
                     </div>
 
                 </div>
-                
+
                 <!-- header social -->
             </div> <!-- row -->
         </div> <!-- container -->
